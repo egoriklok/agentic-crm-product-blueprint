@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agentic-crm.local/schemas/agent-orchestrator-contract.v1.json",
+  "schema_version": "1.0.0",
+  "contract_name": "Universal bounded CRM generation orchestrator",
+  "objective": "Coordinate agents that transform authorized company sources into a deployable CRM while preserving provenance, tenant boundaries, approval gates and rollback.",
+  "state_machine": [
+    "intake",
+    "source_registration",
+    "entity_extraction",
+    "canonical_mapping",
+    "crm_generation",
+    "portal_generation",
+    "integration_planning",
+    "verification",
+    "deployment_handoff"
+  ],
+  "handoff_packet_required_fields": [
+    "task_id",
+    "agent_id",
+    "objective",
+    "input_sources",
+    "allowed_files",
+    "forbidden_files",
+    "expected_outputs",
+    "approval_gates",
+    "evidence_required",
+    "rollback_plan"
+  ],
+  "coordination_rules": {
+    "source_registration_before_generation": true,
+    "provenance_required_for_generated_fields": true,
+    "parallel_agents_require_disjoint_write_scopes": true,
+    "qa_skeptic_must_verify_current_state": true,
+    "max_iterations_per_task": 8
+  },
+  "abort_conditions": [
+    "private source requested without authorization",
+    "secret requested for public repo",
+    "entity extraction lacks source provenance",
+    "tenant boundary is unclear",
+    "external write requested without human approval",
+    "deployment lacks backup and rollback"
+  ]
+}

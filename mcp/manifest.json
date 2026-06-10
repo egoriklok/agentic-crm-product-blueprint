@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Universal Agentic CRM MCP Manifest",
+  "resources": [
+    {
+      "uri": "agentic-crm://sources",
+      "description": "Registered source registry with provenance and permissions."
+    },
+    {
+      "uri": "agentic-crm://canonical-dataset",
+      "description": "Canonical CRM entities validated by schemas/canonical_crm.schema.json."
+    },
+    {
+      "uri": "agentic-crm://approval-queue",
+      "description": "Human approval queue for external writes, deploys and high-risk mutations."
+    }
+  ],
+  "tools": [
+    {
+      "name": "register_source",
+      "risk": "read_only",
+      "requires_human_approval": false
+    },
+    {
+      "name": "extract_entities",
+      "risk": "temp_compute",
+      "requires_human_approval": false
+    },
+    {
+      "name": "upsert_crm_entity",
+      "risk": "crm_write",
+      "requires_human_approval": true
+    },
+    {
+      "name": "publish_client_portal",
+      "risk": "public_write",
+      "requires_human_approval": true
+    },
+    {
+      "name": "deploy_to_vps",
+      "risk": "production_deploy",
+      "requires_human_approval": true
+    },
+    {
+      "name": "restore_backup",
+      "risk": "data_recovery",
+      "requires_human_approval": true
+    }
+  ]
+}

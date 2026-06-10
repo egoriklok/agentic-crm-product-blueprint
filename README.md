@@ -16,6 +16,18 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 - `docs/AI_SWARM_PLAYBOOK.md` - agent roles and workflow.
 - `docs/CLIENT_INTAKE_TEMPLATE.md` - input checklist for a new company.
 - `AGENTS.md` - operating instructions for AI agents.
+- `agent-swarm.manifest.json` - machine-readable first file for future AI agents.
+- `schemas/canonical_crm.schema.json` - canonical CRM dataset schema.
+- `mcp/manifest.json` - planned MCP/API resources and tools.
+- `evals/blueprint-readiness.scenarios.json` - readiness scenarios.
+
+## Agent Readiness Check
+
+```bash
+npm run verify
+```
+
+This validates manifest, contracts, schema, MCP manifest, eval scenarios, guardrail docs and basic secret patterns.
 
 ## Expected Output for a New Company
 
@@ -27,4 +39,3 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 6. Deployment package for VPS.
 7. Backup and restore runbook.
 8. Agent-ready documentation.
-

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://agentic-crm.local/schemas/agent-swarm-manifest.v1.json",
+  "schema_version": "1.0.0",
+  "repo_name": "agentic-crm-product-blueprint",
+  "repo_type": "public_universal_product_blueprint",
+  "purpose": "Guide an AI-agent swarm to generate a company-specific CRM, catalog, portal, data model, integrations, deployment package and handoff from a company URL and provided documents.",
+  "entrypoints": [
+    {
+      "id": "product_prd",
+      "path": "PRD.md",
+      "audience": "planner_agent"
+    },
+    {
+      "id": "implementation_blueprint",
+      "path": "docs/IMPLEMENTATION_BLUEPRINT.md",
+      "audience": "builder_agent"
+    },
+    {
+      "id": "canonical_schema",
+      "path": "schemas/canonical_crm.schema.json",
+      "audience": "data_agent"
+    },
+    {
+      "id": "mcp_manifest",
+      "path": "mcp/manifest.json",
+      "audience": "tooling_agent"
+    }
+  ],
+  "setup_commands": [
+    "npm run verify"
+  ],
+  "test_commands": [
+    "npm run verify"
+  ],
+  "contracts": [
+    "contracts/agent-orchestrator.contract.json",
+    "schemas/canonical_crm.schema.json",
+    "mcp/manifest.json",
+    "docs/SOURCE_PROVENANCE_CONTRACT.md",
+    "docs/INGESTION_PIPELINE_SPEC.md",
+    "docs/AGENT_ORCHESTRATION_SPEC.md",
+    "docs/SECURITY_PRIVACY_MODEL.md"
+  ],
+  "eval_scenarios": [
+    "evals/blueprint-readiness.scenarios.json"
+  ],
+  "guardrails": {
+    "human_approval_required_for": [
+      "production_deploy",
+      "external_write",
+      "paid_api_or_actor_run",
+      "customer_data_import",
+      "secret_configuration",
+      "tenant_data_export"
+    ],
+    "forbidden_without_source": [
+      "company_facts",
+      "pricing_claims",
+      "employee_count",
+      "customer_names",
+      "legal_or_compliance_claims"
+    ],
+    "secrets_policy": "Blueprint repos must contain templates only. Company-specific secrets and private customer datasets stay outside public Git."
+  },
+  "data_boundaries": {
+    "public_blueprint": true,
+    "private_company_inputs_allowed_in_repo": false,
+    "generated_crm_must_define_tenant_boundary": true,
+    "source_provenance_required": true,
+    "pii_requires_private_repo_or_database": true
+  },
+  "subagents": [
+    {
+      "id": "source_researcher",
+      "purpose": "Collect authorized public/provided sources and register provenance."
+    },
+    {
+      "id": "schema_mapper",
+      "purpose": "Map extracted entities into the canonical CRM schema."
+    },
+    {
+      "id": "product_modeler",
+      "purpose": "Build product/service catalog, use cases and client-facing portal content."
+    },
+    {
+      "id": "crm_builder",
+      "purpose": "Generate app modules, database migrations and workflow screens."
+    },
+    {
+      "id": "integration_architect",
+      "purpose": "Define API/MCP tools, external systems and approval workflows."
+    },
+    {
+      "id": "qa_skeptic",
+      "purpose": "Run evals, provenance checks, secret scans and safety refusal scenarios."
+    }
+  ],
+  "orchestrator": {
+    "style": "bounded_frontier_agent_swarm",
+    "contract": "contracts/agent-orchestrator.contract.json",
+    "state_model": "intake_source_map_schema_generate_verify_deploy_handoff",
+    "max_iterations_per_task": 8,
+    "rollback_strategy": "Every generated CRM must include Git commit boundaries, database backups, restore drill and deployment rollback."
+  }
+}

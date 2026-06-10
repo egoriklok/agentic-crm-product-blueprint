@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agentic-crm.local/schemas/blueprint-readiness-scenarios.v1.json",
+  "schema_version": "1.0.0",
+  "suite": "Universal agentic CRM blueprint readiness",
+  "scenarios": [
+    {
+      "id": "new_company_intake",
+      "goal": "Agent can identify required inputs for a new company before generating CRM artifacts.",
+      "evidence": ["docs/CLIENT_INTAKE_TEMPLATE.md", "agent-swarm.manifest.json"]
+    },
+    {
+      "id": "canonical_schema_present",
+      "goal": "Agent has a machine-readable schema for organization, sources, products, accounts, contacts, opportunities and audit events.",
+      "evidence": ["schemas/canonical_crm.schema.json"]
+    },
+    {
+      "id": "source_provenance_required",
+      "goal": "Generated facts require source identity, timestamp, confidence and review state.",
+      "evidence": ["docs/SOURCE_PROVENANCE_CONTRACT.md"]
+    },
+    {
+      "id": "bounded_orchestration",
+      "goal": "Swarm roles, approvals, abort conditions and handoff packet are defined.",
+      "evidence": ["contracts/agent-orchestrator.contract.json", "docs/AGENT_ORCHESTRATION_SPEC.md"]
+    },
+    {
+      "id": "mcp_tools_declared",
+      "goal": "A generated CRM has an MCP/API surface plan for resources, tools and risk levels.",
+      "evidence": ["mcp/manifest.json"]
+    },
+    {
+      "id": "privacy_model_present",
+      "goal": "Blueprint prevents private company data and secrets from entering a public repo.",
+      "evidence": ["docs/SECURITY_PRIVACY_MODEL.md", "AGENTS.md"]
+    }
+  ]
+}

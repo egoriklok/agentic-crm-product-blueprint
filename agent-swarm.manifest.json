@@ -24,13 +24,24 @@
       "id": "mcp_manifest",
       "path": "mcp/manifest.json",
       "audience": "tooling_agent"
+    },
+    {
+      "id": "monetization_landing",
+      "path": "landing/index.html",
+      "audience": "sales_agent"
+    },
+    {
+      "id": "monetization_playbook",
+      "path": "docs/MONETIZATION_PLAYBOOK.md",
+      "audience": "sales_agent"
     }
   ],
   "setup_commands": [
     "npm run verify"
   ],
   "test_commands": [
-    "npm run verify"
+    "npm run verify",
+    "npm run landing:verify"
   ],
   "contracts": [
     "contracts/agent-orchestrator.contract.json",
@@ -39,7 +50,8 @@
     "docs/SOURCE_PROVENANCE_CONTRACT.md",
     "docs/INGESTION_PIPELINE_SPEC.md",
     "docs/AGENT_ORCHESTRATION_SPEC.md",
-    "docs/SECURITY_PRIVACY_MODEL.md"
+    "docs/SECURITY_PRIVACY_MODEL.md",
+    "docs/MONETIZATION_PLAYBOOK.md"
   ],
   "eval_scenarios": [
     "evals/blueprint-readiness.scenarios.json"

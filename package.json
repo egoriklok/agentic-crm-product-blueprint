@@ -4,6 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "verify": "node scripts/validate-agent-readiness.mjs"
+    "verify": "node scripts/validate-agent-readiness.mjs && node scripts/validate-landing.mjs",
+    "landing:verify": "node scripts/validate-landing.mjs"
   }
 }

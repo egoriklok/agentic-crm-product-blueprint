@@ -39,6 +39,13 @@ const requiredFiles = [
   "docs/EVAL_HARNESS_SPEC.md",
   "docs/REFERENCE_COMPANY_FIXTURE.md",
   "docs/SECURITY_PRIVACY_MODEL.md",
+  "docs/MONETIZATION_PLAYBOOK.md",
+  "landing/index.html",
+  "landing/.nojekyll",
+  "landing/assets/styles.css",
+  "landing/assets/app.js",
+  ".github/workflows/pages.yml",
+  "scripts/validate-landing.mjs",
   "schemas/canonical_crm.schema.json",
   "contracts/agent-orchestrator.contract.json",
   "mcp/manifest.json",
@@ -73,7 +80,9 @@ const textExpectations = [
   ["docs/INGESTION_PIPELINE_SPEC.md", ["idempotency", "deduplicate", "failure"]],
   ["docs/AGENT_ORCHESTRATION_SPEC.md", ["approval", "handoff", "blocked"]],
   ["docs/SECURITY_PRIVACY_MODEL.md", ["secrets", "tenant", "pii"]],
-  ["docs/EVAL_HARNESS_SPEC.md", ["secret scan", "backup", "schema"]]
+  ["docs/EVAL_HARNESS_SPEC.md", ["secret scan", "backup", "schema"]],
+  ["docs/MONETIZATION_PLAYBOOK.md", ["unit economics", "cjm", "jtbd", "clean-room"]],
+  ["landing/index.html", ["routeops crm", "что продаем", "unit economics", "cjm", "jtbd"]]
 ]
 
 for (const [file, terms] of textExpectations) {

@@ -787,6 +787,11 @@ input[type="range"] {
   color: #dff5f0;
 }
 
+.cta-section {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
 .cta-actions {
   display: flex;
   flex-wrap: wrap;

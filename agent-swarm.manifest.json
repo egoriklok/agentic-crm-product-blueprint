@@ -34,6 +34,11 @@
       "id": "monetization_playbook",
       "path": "docs/MONETIZATION_PLAYBOOK.md",
       "audience": "sales_agent"
+    },
+    {
+      "id": "ru_sales_subagents",
+      "path": "docs/RU_SALES_SUBAGENTS.md",
+      "audience": "sales_orchestrator"
     }
   ],
   "setup_commands": [
@@ -51,7 +56,8 @@
     "docs/INGESTION_PIPELINE_SPEC.md",
     "docs/AGENT_ORCHESTRATION_SPEC.md",
     "docs/SECURITY_PRIVACY_MODEL.md",
-    "docs/MONETIZATION_PLAYBOOK.md"
+    "docs/MONETIZATION_PLAYBOOK.md",
+    "docs/RU_SALES_SUBAGENTS.md"
   ],
   "eval_scenarios": [
     "evals/blueprint-readiness.scenarios.json"
@@ -105,6 +111,14 @@
     {
       "id": "qa_skeptic",
       "purpose": "Run evals, provenance checks, secret scans and safety refusal scenarios."
+    },
+    {
+      "id": "agents-human-customer-bp",
+      "purpose": "Review public sales materials as a Russian-speaking non-technical B2B buyer who does not know English and must understand the business result."
+    },
+    {
+      "id": "agents-seller-marketing-guru-ru",
+      "purpose": "Review public sales materials as a Russian-speaking B2B seller and marketing strategist who must package the CRM into a clear pilot, pricing logic, objections and close."
     }
   ],
   "orchestrator": {

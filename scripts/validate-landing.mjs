@@ -18,6 +18,7 @@ const landing = read("landing/index.html")
 const styles = read("landing/assets/styles.css")
 const app = read("landing/assets/app.js")
 const playbook = read("docs/MONETIZATION_PLAYBOOK.md")
+const subagents = read("docs/RU_SALES_SUBAGENTS.md")
 read(".github/workflows/pages.yml")
 read("landing/.nojekyll")
 
@@ -26,22 +27,29 @@ const requiredLandingTerms = [
   "Что продаем",
   "Кому продаем",
   "Где продаем",
-  "Unit economics",
-  "CJM",
-  "JTBD",
+  "Экономика пилота",
+  "Путь клиента",
+  "Задача покупателя",
   "Сценарий первой встречи",
-  "Telegram Mini App",
+  "Каталог внутри Telegram",
   "2GIS",
   "DaData",
-  "Apify"
+  "Apify",
+  "Через 14 дней",
+  "Мы не гарантируем продажи"
 ]
 
 for (const term of requiredLandingTerms) {
   assert(landing.includes(term), `landing/index.html must include: ${term}`)
 }
 
-for (const term of ["What We Sell", "Who We Sell To", "Where We Sell", "Unit Economics", "CJM", "First Meeting Script", "Clean-Room Sales Rule"]) {
+for (const term of ["Что продаем", "Кому продаем", "Где продаем", "Экономика пилота", "Путь клиента", "Сценарий первой встречи", "Возражения и ответы"]) {
   assert(playbook.includes(term), `docs/MONETIZATION_PLAYBOOK.md must include: ${term}`)
+}
+
+const subagentsLower = subagents.toLowerCase()
+for (const term of ["agents-human-customer-bp", "agents-seller-marketing-guru-ru", "без английского", "русскоязычный"]) {
+  assert(subagentsLower.includes(term), `docs/RU_SALES_SUBAGENTS.md must include: ${term}`)
 }
 
 for (const id of ["leadCount", "conversionRate", "averageOrder", "repeatCount", "grossMargin", "revenue90", "payback"]) {

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: agentic-crm-product-blueprint
+    runtime: static
+    plan: free
+    buildCommand: npm ci && npm run verify
+    staticPublishPath: ./dist
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: 24.14.1
+      - key: VITE_BASE_PATH
+        value: /
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

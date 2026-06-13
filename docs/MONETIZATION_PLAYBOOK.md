@@ -1,242 +1,327 @@
-# RouteOps CRM Monetization Playbook
+# RouteOps CRM: сценарий продаж для русскоязычного B2B
 
-## Executive Positioning
+## Главная идея
 
-RouteOps CRM is a clean-room commercial product built from the public agentic CRM blueprint. It should be sold as a B2B revenue operating system for local suppliers with recurring orders, not as a custom software project.
+RouteOps CRM продается не как "разработка CRM" и не как технический эксперимент. Его нужно продавать как управляемый тест нового B2B-канала продаж с понятной экономикой.
 
-The original implementation work becomes a reusable pattern:
+Короткая формулировка для встречи:
 
-- CRM for leads, companies, contacts, pipeline and orders.
-- Client-facing catalog and order surface.
-- Telegram Mini App architecture for repeat ordering.
-- Company enrichment from public sources.
-- AI-agent approval queue for manager tasks.
-- Documentation, tests, guardrails and deployment handoff.
+> Запускаем B2B-канал повторных заказов за 14 дней: база лидов, воронка продаж, каталог внутри Telegram, шаблон КП и понятные действия для менеджера.
 
-Private customer data, proprietary catalogs, live tokens, third-party brand assets and rejected partnership context must not be used in sales collateral.
+Основной смысл для собственника:
 
-## What We Sell
+- менеджер не должен помнить, кому и когда написать;
+- повторный заказ не должен теряться в Telegram, WhatsApp или Excel;
+- собственник должен видеть, кто купил, кто повторит, где застряло КП и кому звонить сегодня;
+- большой проект нужен только после проверки одного сегмента.
 
-### 1. Revenue Sprint
+## Что продаем
 
-Two-week launch for one city and one priority segment.
+### 1. Быстрый запуск продаж
 
-- Lead list with source links and address context.
-- CRM pipeline with stages, tasks and contacts.
-- Client-facing catalog prototype.
-- Commercial offer template.
-- Sales script and objection map.
-- First outreach plan.
+14-дневный пилот для одного города и одного сегмента.
 
-Recommended price: **280,000-450,000 RUB**.
+Что входит:
 
-### 2. Order OS Implementation
+- 100-150 B2B-лидов с источниками, адресами и статусом проверки;
+- воронка продаж с этапами от нового лида до первого заказа;
+- каталог внутри Telegram;
+- шаблон коммерческого предложения;
+- скрипт продаж и карта возражений;
+- первые касания и отчет по экономике сегмента.
 
-Full working system for B2B repeat orders.
+Цена: **280,000-450,000 рублей**.
 
-- CRM, catalog, order history and repeat order flow.
-- Telegram Mini App-ready client catalog.
-- Company enrichment from 2GIS, DaData, websites and Apify Actors.
-- API/MCP integration contracts.
-- Manager approval queue for AI-suggested changes.
-- VPS deployment, backup and restore runbook.
+Когда продавать: клиент хочет быстро проверить сегмент, но еще не готов покупать большое внедрение.
 
-Recommended price: **690,000-1,200,000 RUB**.
+### 2. Система повторных заказов
 
-### 3. Managed Growth
+Полный рабочий контур для B2B-продаж и повторных закупок.
 
-Monthly operating package after launch.
+Что входит:
 
-- New lead refresh.
-- Source enrichment.
-- Pipeline review.
-- New segments and scripts.
-- Weekly revenue review.
-- AI-agent task queue tuning.
+- CRM для компаний, контактов, сделок и заказов;
+- клиентский каталог и история заказов;
+- повторный заказ через привычный Telegram-канал;
+- автозаполнение карточек компаний из открытых источников;
+- роли менеджеров и руководителя;
+- подсказки менеджеру, которые не применяются без подтверждения;
+- запуск на сервере, резервное копирование и инструкция по восстановлению.
 
-Recommended price: **90,000-180,000 RUB per month**.
+Цена: **690,000-1,200,000 рублей**.
 
-## Who We Sell To
+Когда продавать: клиент уже понимает ценность повторных заказов и хочет управляемую систему вместо ручного хаоса.
 
-### Local Food Producers and Caterers
+### 3. Ежемесячное развитие продаж
 
-JTBD: when B2B sales sit across messengers, spreadsheets and manual calls, help the team launch a repeatable office sales channel with a catalog, CRM and first-order workflow.
+Сопровождение после запуска.
 
-Trigger: founder or commercial director wants to enter offices, coworkings, clinics, schools or distributed retail points.
+Что входит:
 
-Primary KPI: first B2B orders in 30 days.
+- обновление базы лидов;
+- новые сегменты и города;
+- контроль воронки и просроченных действий;
+- новые скрипты, КП и предложения;
+- еженедельный разбор продаж по цифрам;
+- настройка задач для менеджеров.
 
-### Vending and Micromarket Operators
+Цена: **90,000-180,000 рублей в месяц**.
 
-JTBD: when locations grow and assortment decisions become manual, help the operator see replenishment, sell-through, route priority and repeat demand.
+Когда продавать: после пилота, если есть подтвержденный спрос и клиент хочет масштабировать канал.
 
-Trigger: operator needs better site-level control and a stronger B2B customer surface.
+## Кому продаем
 
-Primary KPI: repeat replenishment and fewer manual manager actions.
+### Поставщики еды, кейтеринг, локальные производители
 
-### B2B Suppliers With Regular Replenishment
+Проблема: продажи идут через мессенджеры и таблицы, офисы и бизнес-центры сложно довести до первого заказа, повтор зависит от менеджера.
 
-JTBD: when clients reorder the same categories, help turn manager memory into a structured catalog, order history and next-best action system.
+Что обещаем проверить: может ли один сегмент дать первые B2B-заказы за 30 дней.
 
-Trigger: recurring orders are managed in chat history or spreadsheets.
+### Вендинг и микромаркеты
 
-Primary KPI: repeat-order share and manager capacity.
+Проблема: точек становится больше, но ассортимент, пополнение и повторный спрос сложно контролировать вручную.
 
-### Automation Integrators
+Что обещаем проверить: где чаще нужен повторный заказ и какие локации требуют внимания менеджера.
 
-JTBD: when an integrator needs to demonstrate a vertical CRM quickly, help generate a working demo from a proven blueprint instead of writing a custom PRD from zero.
+### Поставщики воды, расходников и регулярных B2B-товаров
 
-Trigger: pre-sale discovery for a client with messy B2B operations.
+Проблема: клиенты покупают регулярно, но история заказов, напоминания и КП хранятся в памяти менеджера.
 
-Primary KPI: time from brief to demo.
+Что обещаем проверить: сколько клиентов можно вернуть в повтор за счет системных напоминаний и понятного каталога.
 
-## Where We Sell
+### Интеграторы автоматизации
 
-Start with dense local B2B markets where repeat delivery or replenishment matters:
+Проблема: на пресейле нужно быстро показать клиенту рабочий пример отраслевой CRM, а не длинную презентацию.
 
-- Saint Petersburg and Leningrad region for local supplier use cases.
-- Moscow for larger B2B supplier density.
-- Russian million-plus cities for repeatable roll-out.
+Что обещаем дать: быстрый демонстрационный контур, который можно адаптировать под отрасль клиента.
 
-Primary channels:
+## Где продаем
 
-- Direct outbound to founders, commercial directors and heads of operations.
-- 2GIS category research for company discovery.
-- Industry Telegram chats and local business communities.
-- Partnerships with bot, CRM and automation integrators.
-- Case-led demos to companies that already sell through messengers.
+Начинать стоит с плотных локальных рынков, где есть повторные поставки:
 
-## Unit Economics
+- Санкт-Петербург и Ленинградская область;
+- Москва;
+- города-миллионники;
+- локальные бизнес-кластеры: офисы, бизнес-центры, клиники, школы, кофейни, склады, сервисные компании.
 
-Use this model in the first meeting. The goal is not to promise revenue, but to show which inputs make the pilot rational.
+Каналы продаж:
 
-| Input | Conservative Pilot Value | Notes |
+- прямые обращения к собственникам и коммерческим директорам;
+- поиск компаний через 2GIS и публичные справочники;
+- отраслевые Telegram-чаты;
+- партнерства с интеграторами CRM, ботов и автоматизации;
+- демонстрации для компаний, которые уже продают через мессенджеры.
+
+## Экономика пилота
+
+На первой встрече не нужно обещать продажи. Нужно показать, какие входные цифры делают пилот разумным.
+
+| Показатель | Консервативное значение | Зачем нужен |
 | --- | ---: | --- |
-| B2B leads | 150 | One city, one segment |
-| First-order conversion | 5-8% | Depends on offer and segment fit |
-| Average order | 15,000-25,000 RUB | Depends on category |
-| Repeat orders in 90 days | 2-4 | For replenishment or food delivery |
-| Gross margin | 25-45% | Confirm with client finance owner |
+| B2B-лиды | 150 | Один город и один сегмент |
+| Конверсия в первый заказ | 5-8% | Проверка силы предложения |
+| Средний заказ | 15,000-25,000 рублей | Размер денежного сигнала |
+| Повторы за 90 дней | 2-4 | Проверка повторности |
+| Маржа после себестоимости | 25-45% | Сколько остается на покрытие внедрения |
 
-Example:
-
-- 150 leads.
-- 7% conversion to first order.
-- 18,000 RUB average order.
-- 3 orders per buyer in 90 days.
-- 35% gross margin.
-
-Expected 90-day gross profit signal:
+Пример расчета:
 
 ```text
-150 x 7% = 10-11 first buyers
-11 x 18,000 x 3 = 594,000 RUB revenue
-594,000 x 35% = 207,900 RUB gross profit
+150 лидов x 7% = 10-11 первых покупателей
+11 покупателей x 18,000 рублей x 3 заказа = 594,000 рублей выручки
+594,000 рублей x 35% маржи = 207,900 рублей валовой прибыли
 ```
 
-This does not fully pay back a large implementation alone, but it validates the channel. The stronger sales case is repeatable expansion: more segments, more cities, higher average order, manager capacity and lower manual work.
+Вывод для клиента:
 
-## CJM
+> Если экономика одного сегмента не сходится, мы не предлагаем большое внедрение. Если сходится, масштабируем на новые сегменты, города и повторные заказы.
 
-### 1. Recognition
+## Путь клиента
 
-The client sees that sales are scattered across messengers, spreadsheets, calls and manager memory.
+### 1. Проблема
 
-Question: "Where does a repeat order get lost today?"
+Клиент признает, что лиды, КП, заказы и повторы живут в разных местах.
 
-### 2. Diagnosis
+Вопрос: "Где сегодня теряется повторный заказ?"
 
-Map the current flow: source, lead, contact, offer, first order, repeat order, delivery, support.
+### 2. Диагностика
 
-Question: "Which step has no owner or no data?"
+Собираем текущий процесс: откуда приходят лиды, где контакты, кто делает КП, кто напоминает о повторе.
 
-### 3. Economic Model
+Вопрос: "Что будет, если завтра уйдет сильный менеджер?"
 
-Estimate leads, conversion, average order, repeat frequency and margin.
+### 3. Экономика
 
-Question: "Which segment can prove the model in 30 days?"
+Считаем средний заказ, маржу, повторность, город, сегмент и пропускную способность менеджера.
 
-### 4. Demo
+Вопрос: "Какие цифры за 14-30 дней покажут, что сегмент стоит развивать?"
 
-Show CRM, catalog, pipeline, company enrichment and order flow.
+### 4. Рабочий пример
 
-Question: "Can your manager use this tomorrow without extra explanation?"
+Показываем базу лидов, карточку компании, воронку, каталог внутри Telegram, КП и подсказку менеджеру.
 
-### 5. Pilot
+Вопрос: "Ваш менеджер сможет использовать это без долгого обучения?"
 
-Launch one city, one segment and one catalog slice.
+### 5. Пилот
 
-Question: "What decision will we make after 30 days if the signal is positive?"
+Запускаем один сегмент, 100-150 лидов, первые касания и отчет.
 
-### 6. Scale
+Вопрос: "Кто принимает решение о продолжении после отчета?"
 
-Add segments, integrations, replenishment logic and AI-agent support.
+### 6. Масштабирование
 
-Question: "Which manual manager action should disappear first?"
+Добавляем сегменты, города, интеграции и ежемесячное развитие продаж.
 
-## First Meeting Script
+Вопрос: "Какое ручное действие менеджера должно исчезнуть первым?"
 
-### 0-5 minutes: Context
+## Сценарий первой встречи
 
-"I am not here to sell a generic CRM. I want to understand where your repeat B2B orders are leaking and whether a 14-day pilot can prove a new sales channel."
+### 0-5 минут: проблема
 
-### 5-12 minutes: Current Process
+Сказать:
 
-Ask:
+> Я не продаю вам еще одну CRM. Хочу понять, где у вас теряются повторные B2B-заказы и можно ли проверить один сегмент за 14 дней.
 
-- Where do leads come from?
-- Where are contacts stored?
-- How is the first offer created?
-- Who reminds the client to reorder?
-- What is currently inside messengers or spreadsheets?
+Спросить:
 
-### 12-20 minutes: Economics
+- Сколько выручки зависит от повторных заказов?
+- Где сейчас живут лиды, КП, заказы и история общения?
+- Что менеджер держит в голове?
 
-Ask:
+### 5-12 минут: текущий процесс
 
-- What is the average order?
-- What is gross margin?
-- Which segment repeats fastest?
-- How many leads can sales process per week?
-- What conversion would make this pilot worth scaling?
+Построить карту:
 
-### 20-28 minutes: Demo
+- источник лида;
+- контакт;
+- каталог или предложение;
+- КП;
+- первый заказ;
+- повторный заказ;
+- доставка;
+- ответственный менеджер.
 
-Show:
+### 12-20 минут: экономика
 
-- Lead and company profile.
-- Contact, address and map link.
-- Segment-specific catalog.
-- Telegram Mini App order flow.
-- AI task suggestion that waits for manager approval.
+Спросить:
 
-### 28-35 minutes: Close
+- Какой средний заказ?
+- Какая маржа после себестоимости товара?
+- Как часто клиент может повторять заказ?
+- Какой минимальный заказ выгоден?
+- Сколько лидов менеджер реально обработает за неделю?
+- Какая конверсия покажет, что сегмент живой?
 
-Offer one of two decisions:
+### 20-28 минут: рабочий пример
 
-- Revenue Sprint if the buyer needs proof before full implementation.
-- Order OS Implementation if repeat orders are already proven and the bottleneck is operational control.
+Показать:
 
-Close with:
+- карточку компании с адресом и ссылкой на карту;
+- контакт и статус проверки;
+- сегментный каталог;
+- повторный заказ внутри Telegram;
+- подсказку менеджеру, которая ждет подтверждения;
+- отчет по лидам, касаниям, КП и заказам.
 
-"The pilot is not a software experiment. It is a controlled test of one B2B revenue segment. If the economics fail, we stop. If they work, the same system becomes the operating layer for the channel."
+### 28-32 минуты: выбор сегмента
 
-## Proof Points To Mention Carefully
+Выбрать один сегмент:
 
-Use only source-backed platform claims:
+- офисы;
+- клиники;
+- школы;
+- кофейни;
+- бизнес-центры;
+- склады;
+- сервисные компании.
 
-- Telegram Mini Apps can provide an in-Telegram web app surface for bot users: <https://core.telegram.org/bots/webapps>
-- 2GIS Places API can search organizations and places by company/category/contact context: <https://docs.2gis.com/en/api/search/places/overview>
-- DaData organization suggestions can enrich legal company data by name, INN and address context: <https://dadata.ru/api/suggest/party/>
-- Apify Actors can run web data automation workflows: <https://docs.apify.com/platform/actors>
+### 32-35 минут: следующий шаг
 
-Do not claim access to a client's private systems until credentials, permissions and data boundaries are formally approved.
+Закрывающий вопрос:
 
-## Clean-Room Sales Rule
+> Если через 14 дней у вас будет 100-150 валидных лидов, каталог, КП и первые измеримые касания, какие цифры должны быть в отчете, чтобы вы продолжили?
 
-When a former prospect declined cooperation, the asset remains useful only as a generalized pattern:
+## Возражения и ответы
 
-- Sell the architecture, not their brand.
-- Sell the workflow, not their catalog.
-- Sell the enrichment and order operating model, not their private data.
-- Keep all public demos free of proprietary screenshots, names, prices and contacts.
+### "У нас уже есть CRM"
+
+Ответ:
+
+> Отлично. Тогда вопрос не в замене CRM, а в том, есть ли там каталог, повторный заказ, Telegram-канал и актуальная база B2B-лидов. Мы можем быть отдельным слоем для проверки канала.
+
+### "У нас все в Telegram, так быстрее"
+
+Ответ:
+
+> Telegram остается. Мы убираем хаос вокруг него: заявки, КП, история, повтор и задачи менеджеру становятся видимыми.
+
+### "Нет времени внедрять"
+
+Ответ:
+
+> Поэтому стартуем с одного сегмента и 14-дневного пилота, без перестройки отдела продаж.
+
+### "Дорого"
+
+Ответ:
+
+> Сначала считаем экономику одного сегмента: лиды, конверсия, средний заказ, маржа и повторность. Если окупаемость не видна, большой проект не предлагаем.
+
+### "Искусственный интеллект будет ошибаться"
+
+Ответ:
+
+> Система только предлагает действия. Менеджер подтверждает. Никаких автоматических изменений в клиентских данных без человека.
+
+### "Лиды будут некачественные"
+
+Ответ:
+
+> Критерий пилота включает не только количество лидов, но и долю подходящих компаний, наличие адреса, доступность контакта, релевантность сегмента и конверсию в касание или КП.
+
+## KPI пилота
+
+- Доля валидных B2B-лидов.
+- Доля лидов с адресом, источником и контактом.
+- Конверсия из лида в касание.
+- Конверсия из касания в КП.
+- Конверсия из КП в первый заказ.
+- Средний чек первого заказа.
+- Валовая прибыль за 30, 60 и 90 дней.
+- Доля клиентов с двумя и более заказами за 90 дней.
+- Время менеджера на создание КП.
+- Количество просроченных напоминаний.
+- Доля заказов через каталог внутри Telegram.
+- Количество циклов повторного заказа до окупаемости внедрения.
+
+## Что нужно от клиента для старта
+
+- Один приоритетный сегмент.
+- Один город или район.
+- Средний чек.
+- Маржа после себестоимости товара.
+- Минимальный выгодный заказ.
+- Текущий каталог или список предложений.
+- Ответственный менеджер.
+- Правила работы с лидами.
+- Доступы только после согласования и только к тем системам, которые нужны для пилота.
+
+## Проверенные источники и платформы
+
+Использовать в материалах только аккуратные, подтверждаемые формулировки:
+
+- Telegram Mini Apps дают веб-интерфейс внутри Telegram-бота: <https://core.telegram.org/bots/webapps>
+- 2GIS Places API помогает искать организации и места по названию, категории и контактному контексту: <https://docs.2gis.com/en/api/search/places/overview>
+- DaData помогает находить и дополнять данные организаций по названию, ИНН и адресу: <https://dadata.ru/api/suggest/party/>
+- Apify Actors используются для автоматизации задач по сбору открытых веб-данных: <https://docs.apify.com/platform/actors>
+
+## Правило публичного демо
+
+Публичный материал должен оставаться чистым:
+
+- не использовать чужие бренды;
+- не показывать приватные каталоги;
+- не публиковать клиентские базы;
+- не включать живые ключи и токены;
+- не обещать доступ к системам клиента до согласования прав;
+- не утверждать факты о компаниях без источника.

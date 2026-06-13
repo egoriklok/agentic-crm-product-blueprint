@@ -43,7 +43,7 @@ function updateEconomics() {
   const revenue90 = firstCustomers * averageOrder * repeats
   const grossProfit = revenue90 * margin
   const pilotCost = 690000
-  const paybackMonths = grossProfit > 0 ? pilotCost / (grossProfit / 3) : 0
+  const paybackCycles = grossProfit > 0 ? pilotCost / grossProfit : 0
 
   outputs.leadCount.textContent = integerFormatter.format(leads)
   outputs.conversionRate.textContent = `${integerFormatter.format(conversion * 100)}%`
@@ -53,7 +53,7 @@ function updateEconomics() {
   outputs.firstCustomers.textContent = integerFormatter.format(firstCustomers)
   outputs.revenue90.textContent = moneyFormatter.format(revenue90)
   outputs.grossProfit.textContent = moneyFormatter.format(grossProfit)
-  outputs.payback.textContent = paybackMonths < 10 ? `${paybackMonths.toFixed(1)} мес.` : "10+ мес."
+  outputs.payback.textContent = paybackCycles < 10 ? `${paybackCycles.toFixed(1)} цикла` : "10+ циклов"
 }
 
 for (const input of Object.values(fields)) {

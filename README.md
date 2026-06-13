@@ -22,13 +22,15 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 - `evals/blueprint-readiness.scenarios.json` - readiness scenarios.
 - `landing/` - public RouteOps CRM monetization landing page.
 - `docs/MONETIZATION_PLAYBOOK.md` - client-meeting playbook with offer, ICP, pricing, unit economics, CJM and JTBD.
+- `docs/RU_SALES_SUBAGENTS.md` - two Russian-speaking commercial review subagents: buyer comprehension and seller/marketing.
 
 ## Public Monetization Demo
 
-RouteOps CRM is the clean-room commercial packaging of this blueprint. It is positioned for companies that need a repeat-order B2B sales operating system with CRM, catalog, Telegram Mini App-ready order flow, enrichment and AI-agent approval queue.
+RouteOps CRM is the clean public commercial packaging of this blueprint. It is positioned for companies that need a repeat-order B2B sales channel with CRM, catalog inside Telegram, lead base, commercial offers and manager follow-up control.
 
 - Demo landing page: <https://egoriklok.github.io/agentic-crm-product-blueprint/>
 - Sales playbook: [`docs/MONETIZATION_PLAYBOOK.md`](docs/MONETIZATION_PLAYBOOK.md)
+- Russian sales subagents: [`docs/RU_SALES_SUBAGENTS.md`](docs/RU_SALES_SUBAGENTS.md)
 - Local preview: open [`landing/index.html`](landing/index.html) in a browser.
 
 The landing intentionally does not include private customer data, proprietary catalogs, live keys or third-party brand claims.

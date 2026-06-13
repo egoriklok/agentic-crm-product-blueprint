@@ -14,6 +14,8 @@
 - Security Agent: checks secrets, permissions and sensitive data.
 - Deployment Agent: prepares VPS deployment and health checks.
 - Backup Agent: validates backup and restore.
+- agents-human-customer-bp: reviews sales pages as a Russian-speaking non-technical B2B buyer who does not know English.
+- agents-seller-marketing-guru-ru: reviews offer, pricing, objections, meeting script and KPI for Russian-speaking B2B sales.
 
 ## Workflow
 
@@ -26,9 +28,22 @@
 7. CRM generation.
 8. Catalog/portal generation.
 9. Integration setup.
-10. Deployment.
-11. Backup and restore drill.
-12. Handoff.
+10. Russian buyer comprehension review with `agents-human-customer-bp`.
+11. Russian seller/marketing review with `agents-seller-marketing-guru-ru`.
+12. Deployment.
+13. Backup and restore drill.
+14. Handoff.
+
+## Russian Sales Review Loop
+
+Use this loop before publishing a public landing page, commercial offer or meeting script:
+
+1. `agents-human-customer-bp` checks whether the target buyer understands the page without English or technical background.
+2. `agents-seller-marketing-guru-ru` checks whether the offer can be sold in a Russian-speaking B2B meeting.
+3. The main builder applies copy and structure changes.
+4. QA verifies that the public material has no private data, live keys, unapproved brand claims or unsupported company facts.
+
+Detailed instructions live in `docs/RU_SALES_SUBAGENTS.md`.
 
 ## Human Approval Gates
 
@@ -52,4 +67,3 @@ Approval is required before:
 - Source provenance present.
 - Backup exists.
 - Restore procedure tested.
-

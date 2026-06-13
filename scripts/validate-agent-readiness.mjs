@@ -40,6 +40,7 @@ const requiredFiles = [
   "docs/REFERENCE_COMPANY_FIXTURE.md",
   "docs/SECURITY_PRIVACY_MODEL.md",
   "docs/MONETIZATION_PLAYBOOK.md",
+  "docs/RU_SALES_SUBAGENTS.md",
   "landing/index.html",
   "landing/.nojekyll",
   "landing/assets/styles.css",
@@ -81,8 +82,9 @@ const textExpectations = [
   ["docs/AGENT_ORCHESTRATION_SPEC.md", ["approval", "handoff", "blocked"]],
   ["docs/SECURITY_PRIVACY_MODEL.md", ["secrets", "tenant", "pii"]],
   ["docs/EVAL_HARNESS_SPEC.md", ["secret scan", "backup", "schema"]],
-  ["docs/MONETIZATION_PLAYBOOK.md", ["unit economics", "cjm", "jtbd", "clean-room"]],
-  ["landing/index.html", ["routeops crm", "что продаем", "unit economics", "cjm", "jtbd"]]
+  ["docs/MONETIZATION_PLAYBOOK.md", ["экономика пилота", "путь клиента", "сценарий первой встречи", "возражения"]],
+  ["docs/RU_SALES_SUBAGENTS.md", ["agents-human-customer-bp", "agents-seller-marketing-guru-ru", "русскоязычный", "без английского"]],
+  ["landing/index.html", ["routeops crm", "что продаем", "экономика пилота", "путь клиента", "задача покупателя"]]
 ]
 
 for (const [file, terms] of textExpectations) {

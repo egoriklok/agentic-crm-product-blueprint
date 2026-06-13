@@ -20,14 +20,27 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 - `schemas/canonical_crm.schema.json` - canonical CRM dataset schema.
 - `mcp/manifest.json` - planned MCP/API resources and tools.
 - `evals/blueprint-readiness.scenarios.json` - readiness scenarios.
+- `landing/` - public RouteOps CRM monetization landing page.
+- `docs/MONETIZATION_PLAYBOOK.md` - client-meeting playbook with offer, ICP, pricing, unit economics, CJM and JTBD.
+
+## Public Monetization Demo
+
+RouteOps CRM is the clean-room commercial packaging of this blueprint. It is positioned for companies that need a repeat-order B2B sales operating system with CRM, catalog, Telegram Mini App-ready order flow, enrichment and AI-agent approval queue.
+
+- Demo landing page: <https://egoriklok.github.io/agentic-crm-product-blueprint/>
+- Sales playbook: [`docs/MONETIZATION_PLAYBOOK.md`](docs/MONETIZATION_PLAYBOOK.md)
+- Local preview: open [`landing/index.html`](landing/index.html) in a browser.
+
+The landing intentionally does not include private customer data, proprietary catalogs, live keys or third-party brand claims.
 
 ## Agent Readiness Check
 
 ```bash
 npm run verify
+npm run landing:verify
 ```
 
-This validates manifest, contracts, schema, MCP manifest, eval scenarios, guardrail docs and basic secret patterns.
+This validates manifest, contracts, schema, MCP manifest, eval scenarios, guardrail docs, the monetization landing, the sales playbook and basic secret patterns.
 
 ## Expected Output for a New Company
 

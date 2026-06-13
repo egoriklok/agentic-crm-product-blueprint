@@ -14,33 +14,65 @@ function read(path) {
   return readFileSync(fullPath, "utf8")
 }
 
-const landing = read("landing/index.html")
-const styles = read("landing/assets/styles.css")
-const app = read("landing/assets/app.js")
+const app = read("src/App.tsx")
+const css = read("src/index.css")
+const main = read("src/main.tsx")
+const vite = read("vite.config.ts")
+const componentsJson = read("components.json")
+const button = read("src/components/ui/button.tsx")
+const card = read("src/components/ui/card.tsx")
+const badge = read("src/components/ui/badge.tsx")
+const tabs = read("src/components/ui/tabs.tsx")
+const accordion = read("src/components/ui/accordion.tsx")
 const playbook = read("docs/MONETIZATION_PLAYBOOK.md")
 const subagents = read("docs/RU_SALES_SUBAGENTS.md")
+const audit = read("docs/RU_SUBAGENT_LANDING_AUDIT.md")
+read("index.html")
 read(".github/workflows/pages.yml")
-read("landing/.nojekyll")
 
-const requiredLandingTerms = [
+assert(!existsSync(join(root, "landing/index.html")), "Static landing/index.html must not coexist with shadcn/ui React landing")
+assert(main.includes("ReactDOM.createRoot"), "React entrypoint must mount the app")
+assert(vite.includes("@tailwindcss/vite"), "Vite config must use Tailwind CSS Vite plugin")
+assert(vite.includes("/agentic-crm-product-blueprint/"), "Vite build must set GitHub Pages base path")
+assert(componentsJson.includes("ui.shadcn.com/schema.json"), "components.json must be shadcn/ui-compatible")
+assert(css.includes("@import \"tailwindcss\""), "Tailwind v4 CSS entry must import tailwindcss")
+
+for (const [name, source] of [
+  ["button", button],
+  ["card", card],
+  ["badge", badge],
+  ["tabs", tabs],
+  ["accordion", accordion]
+]) {
+  assert(source.includes("@/lib/utils") || name === "accordion", `shadcn/ui ${name} component must use local utilities`)
+}
+
+const requiredAppTerms = [
   "RouteOps CRM",
-  "Что продаем",
-  "Кому продаем",
-  "Где продаем",
-  "Экономика пилота",
-  "Путь клиента",
+  "Верните повторные B2B-заказы под контроль за 14 дней",
+  "Разобрать мой сегмент за 30 минут",
+  "Симптомы",
+  "Что будет за 14 дней",
+  "Кому подходит",
   "Задача покупателя",
   "Сценарий первой встречи",
+  "Экономика пилота",
+  "Проверка одного сегмента за 14 дней",
+  "Контроль повторных заказов и КП",
+  "Рост базы и повторных продаж каждый месяц",
+  "Мы не гарантируем продажи",
   "Каталог внутри Telegram",
   "2GIS",
   "DaData",
-  "Apify",
-  "Через 14 дней",
-  "Мы не гарантируем продажи"
+  "Apify"
 ]
 
-for (const term of requiredLandingTerms) {
-  assert(landing.includes(term), `landing/index.html must include: ${term}`)
+for (const term of requiredAppTerms) {
+  assert(app.includes(term), `src/App.tsx must include: ${term}`)
+}
+
+for (const term of ["Accordion", "Tabs", "Button", "Card", "Badge", "useState", "useMemo"]) {
+  assert(app.includes(term), `src/App.tsx must use ${term}`)
 }
 
 for (const term of ["Что продаем", "Кому продаем", "Где продаем", "Экономика пилота", "Путь клиента", "Сценарий первой встречи", "Возражения и ответы"]) {
@@ -52,15 +84,11 @@ for (const term of ["agents-human-customer-bp", "agents-seller-marketing-guru-ru
   assert(subagentsLower.includes(term), `docs/RU_SALES_SUBAGENTS.md must include: ${term}`)
 }
 
-for (const id of ["leadCount", "conversionRate", "averageOrder", "repeatCount", "grossMargin", "revenue90", "payback"]) {
-  assert(landing.includes(`id="${id}"`) || app.includes(`#${id}`), `Economics calculator missing ${id}`)
+for (const term of ["agents-human-customer-bp", "agents-seller-marketing-guru-ru", "Required changes", "Adaptation Decisions"]) {
+  assert(audit.includes(term), `docs/RU_SUBAGENT_LANDING_AUDIT.md must include: ${term}`)
 }
 
-assert(styles.includes("@media (max-width: 760px)"), "Landing CSS must define mobile layout")
-assert(styles.includes("overflow-wrap: anywhere"), "Landing CSS must protect long labels from overflow")
-assert(app.includes("Intl.NumberFormat"), "Landing calculator must format Russian currency")
-
-const cleanRoomForbidden = [
+const forbidden = [
   /Lunch\s*Up/i,
   /lunch-up/i,
   /CRM_ACCESS_KEY/i,
@@ -70,8 +98,8 @@ const cleanRoomForbidden = [
   /sk-[A-Za-z0-9_-]{20,}/
 ]
 
-for (const pattern of cleanRoomForbidden) {
-  assert(!pattern.test(landing), `Forbidden clean-room term or secret in landing: ${pattern}`)
+for (const pattern of forbidden) {
+  assert(!pattern.test(app), `Forbidden clean-room term or secret in src/App.tsx: ${pattern}`)
 }
 
-console.log("RouteOps monetization landing verification passed")
+console.log("RouteOps shadcn/ui landing verification passed")

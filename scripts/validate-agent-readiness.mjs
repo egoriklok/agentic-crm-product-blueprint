@@ -41,10 +41,21 @@ const requiredFiles = [
   "docs/SECURITY_PRIVACY_MODEL.md",
   "docs/MONETIZATION_PLAYBOOK.md",
   "docs/RU_SALES_SUBAGENTS.md",
-  "landing/index.html",
-  "landing/.nojekyll",
-  "landing/assets/styles.css",
-  "landing/assets/app.js",
+  "docs/RU_SUBAGENT_LANDING_AUDIT.md",
+  "index.html",
+  "vite.config.ts",
+  "tsconfig.json",
+  "components.json",
+  "src/App.tsx",
+  "src/main.tsx",
+  "src/index.css",
+  "src/vite-env.d.ts",
+  "src/lib/utils.ts",
+  "src/components/ui/button.tsx",
+  "src/components/ui/card.tsx",
+  "src/components/ui/badge.tsx",
+  "src/components/ui/tabs.tsx",
+  "src/components/ui/accordion.tsx",
   ".github/workflows/pages.yml",
   "scripts/validate-landing.mjs",
   "schemas/canonical_crm.schema.json",
@@ -84,7 +95,8 @@ const textExpectations = [
   ["docs/EVAL_HARNESS_SPEC.md", ["secret scan", "backup", "schema"]],
   ["docs/MONETIZATION_PLAYBOOK.md", ["экономика пилота", "путь клиента", "сценарий первой встречи", "возражения"]],
   ["docs/RU_SALES_SUBAGENTS.md", ["agents-human-customer-bp", "agents-seller-marketing-guru-ru", "русскоязычный", "без английского"]],
-  ["landing/index.html", ["routeops crm", "что продаем", "экономика пилота", "путь клиента", "задача покупателя"]]
+  ["docs/RU_SUBAGENT_LANDING_AUDIT.md", ["agents-human-customer-bp", "agents-seller-marketing-guru-ru", "adaptation decisions"]],
+  ["src/App.tsx", ["routeops crm", "что продаем", "экономика пилота", "путь клиента", "задача покупателя", "tabs", "accordion"]]
 ]
 
 for (const [file, terms] of textExpectations) {
@@ -103,7 +115,7 @@ const secretPatterns = [
 
 function walk(dir, files = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === ".git" || entry.name === "node_modules") continue
+    if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "dist" || entry.name === "build") continue
     const fullPath = join(dir, entry.name)
     if (entry.isDirectory()) walk(fullPath, files)
     else files.push(fullPath)

@@ -27,7 +27,7 @@
     },
     {
       "id": "monetization_landing",
-      "path": "landing/index.html",
+      "path": "src/App.tsx",
       "audience": "sales_agent"
     },
     {
@@ -57,7 +57,8 @@
     "docs/AGENT_ORCHESTRATION_SPEC.md",
     "docs/SECURITY_PRIVACY_MODEL.md",
     "docs/MONETIZATION_PLAYBOOK.md",
-    "docs/RU_SALES_SUBAGENTS.md"
+    "docs/RU_SALES_SUBAGENTS.md",
+    "docs/RU_SUBAGENT_LANDING_AUDIT.md"
   ],
   "eval_scenarios": [
     "evals/blueprint-readiness.scenarios.json"

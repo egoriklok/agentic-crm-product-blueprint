@@ -20,9 +20,10 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 - `schemas/canonical_crm.schema.json` - canonical CRM dataset schema.
 - `mcp/manifest.json` - planned MCP/API resources and tools.
 - `evals/blueprint-readiness.scenarios.json` - readiness scenarios.
-- `landing/` - public RouteOps CRM monetization landing page.
+- `src/App.tsx` - public RouteOps CRM monetization landing page built with React, Tailwind and shadcn/ui-style local components.
 - `docs/MONETIZATION_PLAYBOOK.md` - client-meeting playbook with offer, ICP, pricing, unit economics, CJM and JTBD.
 - `docs/RU_SALES_SUBAGENTS.md` - two Russian-speaking commercial review subagents: buyer comprehension and seller/marketing.
+- `docs/RU_SUBAGENT_LANDING_AUDIT.md` - recorded audit findings from the two Russian-speaking subagents.
 
 ## Public Monetization Demo
 
@@ -31,7 +32,8 @@ RouteOps CRM is the clean public commercial packaging of this blueprint. It is p
 - Demo landing page: <https://egoriklok.github.io/agentic-crm-product-blueprint/>
 - Sales playbook: [`docs/MONETIZATION_PLAYBOOK.md`](docs/MONETIZATION_PLAYBOOK.md)
 - Russian sales subagents: [`docs/RU_SALES_SUBAGENTS.md`](docs/RU_SALES_SUBAGENTS.md)
-- Local preview: open [`landing/index.html`](landing/index.html) in a browser.
+- Subagent landing audit: [`docs/RU_SUBAGENT_LANDING_AUDIT.md`](docs/RU_SUBAGENT_LANDING_AUDIT.md)
+- Local preview: run `npm run dev`.
 
 The landing intentionally does not include private customer data, proprietary catalogs, live keys or third-party brand claims.
 
@@ -40,6 +42,7 @@ The landing intentionally does not include private customer data, proprietary ca
 ```bash
 npm run verify
 npm run landing:verify
+npm run build
 ```
 
 This validates manifest, contracts, schema, MCP manifest, eval scenarios, guardrail docs, the monetization landing, the sales playbook and basic secret patterns.

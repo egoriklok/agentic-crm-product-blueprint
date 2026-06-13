@@ -5,10 +5,16 @@ on:
     branches:
       - main
     paths:
-      - "landing/**"
+      - "src/**"
+      - "index.html"
+      - "vite.config.ts"
+      - "tsconfig.json"
+      - "components.json"
       - "docs/MONETIZATION_PLAYBOOK.md"
+      - "docs/RU_SUBAGENT_LANDING_AUDIT.md"
       - "scripts/**"
       - "package.json"
+      - "package-lock.json"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -38,6 +44,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Verify blueprint and landing
         run: npm run verify
@@ -48,7 +58,7 @@ jobs:
       - name: Upload landing artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: landing
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment

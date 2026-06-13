@@ -30,12 +30,17 @@ The target user is another AI agent or AI-agent swarm that must reproduce a CRM 
 RouteOps CRM is the clean public commercial packaging of this blueprint. It is positioned for companies that need a repeat-order B2B sales channel with CRM, catalog inside Telegram, lead base, commercial offers and manager follow-up control.
 
 - Demo landing page: <https://egoriklok.github.io/agentic-crm-product-blueprint/>
+- Render static-site deploy: <https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fegoriklok%2Fagentic-crm-product-blueprint>
 - Sales playbook: [`docs/MONETIZATION_PLAYBOOK.md`](docs/MONETIZATION_PLAYBOOK.md)
 - Russian sales subagents: [`docs/RU_SALES_SUBAGENTS.md`](docs/RU_SALES_SUBAGENTS.md)
 - Subagent landing audit: [`docs/RU_SUBAGENT_LANDING_AUDIT.md`](docs/RU_SUBAGENT_LANDING_AUDIT.md)
 - Local preview: run `npm run dev`.
 
 The landing intentionally does not include private customer data, proprietary catalogs, live keys or third-party brand claims.
+
+The Render Blueprint deploys the same Vite landing as a free static site and
+sets `VITE_BASE_PATH=/`, while GitHub Pages keeps the repository subpath
+fallback from `vite.config.ts`.
 
 ## Agent Readiness Check
 
